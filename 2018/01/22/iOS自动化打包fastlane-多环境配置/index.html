@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="SkyerQiu Blog">
 <meta property="og:description" content="介绍fastlane是一个自动化测试部署和自动化打包，发布的ruby工具集。有很多好用的工具，都可以在官网找到详细介绍，也可以自己写插件，如果这些都不能满足你的要求。后面会介绍gym。用来iOS打包。  scan 自动化测试工具，很好的封装了 Unit Testsigh 针对于 iOS 项目开发证书和 Provision file 的下载工具match 同步团队每个人的证书和 Provision">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-22T16:24:46.000Z">
+<meta property="og:updated_time" content="2018-03-19T14:34:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS自动化打包fastlane 多环境配置">
 <meta name="twitter:description" content="介绍fastlane是一个自动化测试部署和自动化打包，发布的ruby工具集。有很多好用的工具，都可以在官网找到详细介绍，也可以自己写插件，如果这些都不能满足你的要求。后面会介绍gym。用来iOS打包。  scan 自动化测试工具，很好的封装了 Unit Testsigh 针对于 iOS 项目开发证书和 Provision file 的下载工具match 同步团队每个人的证书和 Provision">
@@ -323,6 +323,14 @@
 <p><strong>lane里面执行lane</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">lane :loadAllApp do</div><div class="line">loadApp(appscheme:&quot;schemeNaem&quot;, appconfiguration:&quot;Releaxe&quot;)</div><div class="line">#需要的话可以一直添加其他lane</div><div class="line">  end</div></pre></td></tr></table></figure>
 <p>执行<br><code>fastlane loadAllApp</code>。</p>
+<p><strong>环境变量设置</strong></p>
+<p>在fastlane目录下可以通过 vim xxx.env 新建一个环境变量配置文件，这个是隐藏文件，默认不显示。<br>如果想执行这个环境变量配置文件 可以 <code>fastlane loadAllApp --env xxx</code>。</p>
+<p>里面你可以 配置一些 变量 供 Fastfile ，Appfile 里面使用。<br>比如在xxx.env 里面 设置了 变量 APP_VERSION </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">APP_VERSION = &quot;1.1.2&quot;</div></pre></td></tr></table></figure>
+<p>其他配置文件可通过 ENV[‘APP_VERSION’] 来读取变量值。</p>
+<p>也可以设置一些 fastlane 提供的默认值 比如 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT = 60</div></pre></td></tr></table></figure>
+<p>这个是fastlane 执行 xcodebuild 的 超时时间 </p>
 
       
     </div>
@@ -431,7 +439,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
