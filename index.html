@@ -306,8 +306,8 @@
       
         
           
-            <p>主要分两部分，代码库和版本库。版本库不是必须的，没有版本库也可以正常使用，版本库可以使我们引用私有库时更加方便，省去在每个私有库后面增加git地址，只需在podfile文件头部引入版本库地址。</p>
-<p>###代码库<br><strong>已写好代码库</strong><br>需要往工程目录添加三个文件。  </p>
+            <p>主要分两部分，代码库和版本库。版本库不是必须的，没有版本库也可以正常使用，版本库可以使我们引用私有库时更加方便，省去在每个私有库后面增加git地址，只需在podfile文件头部引入版本库地址。  </p>
+<h3 id="代码库"><a href="#代码库" class="headerlink" title="代码库"></a>代码库</h3><p><strong>已写好代码库</strong><br>需要往工程目录添加三个文件。  </p>
 <ol>
 <li>LICENSE - defaulting to the MIT License.  </li>
 <li>README.md - a default README in markdown.  </li>
@@ -324,12 +324,11 @@
 <p>然后 git 提交tag版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1. git add .</div><div class="line">2. git commit -m &quot;update repo&quot;</div><div class="line">3. git tag 0.0.2</div><div class="line">4. git push --tags</div></pre></td></tr></table></figure>
 <p>每次代码库有更新都需要打一个tag提交，对应的MyLib.podspec配置里面的版本信息页需要修改。</p>
-<p>###版本库<br>在远程仓库创建一个版本库。然后通过命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod repo add MyRepo https://git.oschina.net/xxx/MyRepo.git</div></pre></td></tr></table></figure></p>
+<h3 id="版本库"><a href="#版本库" class="headerlink" title="版本库"></a>版本库</h3><p>在远程仓库创建一个版本库。然后通过命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod repo add MyRepo https://git.oschina.net/xxx/MyRepo.git</div></pre></td></tr></table></figure></p>
 <p>然后查看在 Finder 目录 ~/.cocoapods/repos， 可以发现增加了一个 MyRepo 的储存版本库。</p>
-<p>###关联代码库和版本库<br>在代码库工程主目录下执行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod repo push MyRepo MyLib.podspec</div></pre></td></tr></table></figure></p>
+<h3 id="关联代码库和版本库"><a href="#关联代码库和版本库" class="headerlink" title="关联代码库和版本库"></a>关联代码库和版本库</h3><p>在代码库工程主目录下执行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod repo push MyRepo MyLib.podspec</div></pre></td></tr></table></figure></p>
 <p>把代码库加入版本库的管理之下。</p>
-<p>###错误</p>
-<ul>
+<h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h3><ul>
 <li><p>ERROR | [iOS] xcodebuild: Returned an unsuccessful exit code. You can use <code>--verbose</code> for more information.</p>
 <ul>
 <li>ERROR | xcodebuild:  /Users/xxx/Desktop/xxx/xx/公共库/xx/xx/xxx.m:10:9: error: ‘AFNetworking.h’ file not found with <angled> include; use “quotes” instead</angled></li>
