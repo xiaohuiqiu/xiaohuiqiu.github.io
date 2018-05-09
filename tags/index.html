@@ -95,17 +95,14 @@
 
 
 
-<meta name="description" content="httpshttps其实是对http的封装，多加了SSL／TLS层，本来https数据是明文的，通过SSL／TLS层加密，这样给传输层的时候也是加密的数据，达到了安全的目的。SSL／TLS 加密过程主要是通过一个非对称加密算法生成一个用来后面数据传输用到的对称密匙，TLS是SSL的延续。    客户端向服务器端发出client hello请求，Client hello消息包括Version，Ran">
-<meta property="og:type" content="article">
-<meta property="og:title" content="关于https的理解">
-<meta property="og:url" content="http://yoursite.com/2017/12/15/关于https的理解/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="标签">
+<meta property="og:url" content="http://yoursite.com/tags/index.html">
 <meta property="og:site_name" content="SkyerQiu Blog">
-<meta property="og:description" content="httpshttps其实是对http的封装，多加了SSL／TLS层，本来https数据是明文的，通过SSL／TLS层加密，这样给传输层的时候也是加密的数据，达到了安全的目的。SSL／TLS 加密过程主要是通过一个非对称加密算法生成一个用来后面数据传输用到的对称密匙，TLS是SSL的延续。    客户端向服务器端发出client hello请求，Client hello消息包括Version，Ran">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-15T15:58:47.000Z">
+<meta property="og:updated_time" content="2018-05-09T13:49:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于https的理解">
-<meta name="twitter:description" content="httpshttps其实是对http的封装，多加了SSL／TLS层，本来https数据是明文的，通过SSL／TLS层加密，这样给传输层的时候也是加密的数据，达到了安全的目的。SSL／TLS 加密过程主要是通过一个非对称加密算法生成一个用来后面数据传输用到的对称密匙，TLS是SSL的延续。    客户端向服务器端发出client hello请求，Client hello消息包括Version，Ran">
+<meta name="twitter:title" content="标签">
 
 
 
@@ -135,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/15/关于https的理解/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/"/>
 
 
 
 
 
-  <title>关于https的理解 | SkyerQiu Blog</title>
+  <title>标签 | SkyerQiu Blog</title>
   
 
 
@@ -226,151 +223,40 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/关于https的理解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="skyer qiu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SkyerQiu Blog">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">关于https的理解</h1>
-        
+	<h1 class="post-title" itemprop="name headline">标签</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T21:54:01+08:00">
-                2017-12-15
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p><strong>https</strong><br>https其实是对http的封装，多加了SSL／TLS层，本来https数据是明文的，通过SSL／TLS层加密，这样给传输层的时候也是加密的数据，达到了安全的目的。<br><strong>SSL／TLS 加密过程</strong><br>主要是通过一个非对称加密算法生成一个用来后面数据传输用到的对称密匙，TLS是SSL的延续。  </p>
-<ol>
-<li>客户端向服务器端发出client hello请求，Client hello消息包括Version，Random，Session id，Cipher suite，Compression method，支持的协议版本，比如TLS 1.0版；一个客户端生成的随机数，稍后用于生成”对话密钥”；支持的加密方法，比如RSA公钥加密；支持的压缩方法。  </li>
-<li>服务器端用server hello信息应答客户端，server hello 消息包括一个SSL版本号。取客户端支持的最高版本号和服务端支持的最高版本号中的较低者；一个用于生成主秘密的32字节的随机数。（客户端一个、服务端一个）；会话ID；从客户端的密码套件列表中选择的一个密码套件；从客户端的压缩方法的列表中选择的压缩方法。  </li>
-<li>服务端发送ssl证书给客户端，这个证书是服务器端从CA那边申请的，证书里面包含服务端的公钥。 这个证书是经过CA的私钥加密过。ssl证书主要包括（证书的发布机构CA，证书的有效期，公钥，证书所有者，签名） </li>
-<li>客户端验证证书，在客户端浏览器都有预装正规的CA的公钥，通过这个公钥解密ssl证书，拿到服务端的公钥。如果证书不是可信机构颁布、或者证书中的域名与实际域名不一致、或者证书已经过期，就会向访问者显示一个警告，由其选择是否还要继续通信。  </li>
-<li>客户端发送一个用获取到的服务端公钥加密的随机数给服务端，这样两端都有了三个随机数，然后通过之前协商的加密算法生成一个密钥。  </li>
-<li>正常通讯阶段。数据都是用对称加密了的。   </li>
-</ol>
-<p><strong>SSL协议的特性</strong><br><em>1.保密：</em>在握手协议中定义了会话密钥后，所有的消息都被加密。<br><em>2.鉴别：</em>可选的客户端认证（如果服务器需要确认客户端的身份，就会再第2阶段包含一项请求，要求客户端提供”客户端证书”。比如，金融机构往往只允许认证客户连入自己的网络，就会向正式客户提供USB密钥，里面就包含了一张客户端证书。），和强制的服务器端认证。<br><em>3.完整性：</em>传送的消息包括消息完整性检查（使用MAC）。<br><strong>总结</strong><br>https可以很大程度提高数据的安全性，https虽然不能防止dns劫持，中间人攻击，但是可以知道，给客户端提示。可以阻止http劫持，内容不一致了，链接会中断。</p>
-
+      <div class="post-body">
+        
+        
+          <div class="tag-cloud">
+            <div class="tag-cloud-title">
+                目前共计 6 个标签
+            </div>
+            <div class="tag-cloud-tags">
+              <a href="/tags/cocoapods/" style="font-size: 30px; color: #111">cocoapods</a> <a href="/tags/fastlane/" style="font-size: 12px; color: #ccc">fastlane</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a> <a href="/tags/lane/" style="font-size: 12px; color: #ccc">lane</a> <a href="/tags/spec/" style="font-size: 12px; color: #ccc">spec</a> <a href="/tags/私有库/" style="font-size: 12px; color: #ccc">私有库</a>
+            </div>
+          </div>
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/09/12/hexo + github pages 搭建属于自己的博客/" rel="next" title="hexo + github pages 搭建属于自己的博客">
-                <i class="fa fa-chevron-left"></i> hexo + github pages 搭建属于自己的博客
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/22/iOS自动化打包fastlane-多环境配置/" rel="prev" title="iOS自动化打包fastlane 多环境配置">
-                iOS自动化打包fastlane 多环境配置 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -585,10 +471,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
 
   
 
